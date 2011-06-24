@@ -1,0 +1,23 @@
+=== torquebox_faker === 
+
+The sole porpouse of this gem is to fake torquebox so you can run your torquebox apps using MRI in your dev/test environment.
+
+I did it because unfortunetly, as today, JRuby is too slow for loading Rails 2.3 apps. It takes 20-25 seconds to load (aka. require config/environment) a Rails app in my machine (MBP i5)... 20-25 seconds added to my test suits :(
+
+With this gem, I can use jruby for my production environment (and use all the JBoss's power) and MRI for dev/test environment (making my test suite run 20-25 seconds faster).
+
+I recommend using bundler in this manner:
+
+== recommended Gemfile ==
+
+group :development, :test do
+  gem "torquebox_faker", :platform => :ruby
+end
+
+group :production do
+  gem 'torquebox', :platform => :jruby
+end
+
+== Support features ==
+
+As today, this gem only supports the Task feature from torquebox.
