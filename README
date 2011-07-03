@@ -20,4 +20,4 @@ end
 
 == Support features ==
 
-As today, this gem only supports the Task feature from torquebox.
+As today, this gem only supports the Task feature from torquebox. It also loads all your tasks at /app/tasks folder.
